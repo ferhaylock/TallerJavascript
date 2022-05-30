@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/67c66657c7.js"></script>
+    <script src="main.js"></script>
+    
+</head>
+<body>
+    <div class="form">
+        <h2> INGRESE DATOS DEL PROYECTO</h2>
+              <table id="tabla1">
+                  <td>Código:</td>
+                  <td><input type="number" id="codigo" ></td>
+                 
+                </tr>
+                <tr>
+                  <td>Nombre:</td>
+                  <td><input type="text" size="30" id="nombre"></td>
+                 
+                </tr>
+                <tr>
+                  <td>Descripcion:</td>
+                  <td><textarea id="descrip" name="descrip"
+                    rows="3" cols="50" maxlength="300"></textarea></td>
+                 
+                </tr>
+                <tr>
+                  <td>Fecha de inicio:</td>
+                  <td><input type="date" id="fecha" name="date"
+                    ></td>
+                 
+                </tr>
+                <tr>
+                  <td>Tipo de proyeto:</td>
+                  <td><input id="inves" type="radio" name="tipo" value="Investigación" class="radioo" checked >Investigación <br>
+                      <input id="exte" type="radio" name="tipo" value="Extensión" class="radioo" >Extensión<br></td>
+                     
+                </tr>
+              </table>
+              <button id="boton1" onclick="proyecto.guardar()">GUARDAR</button>
+              
+            
+              <div id="buscador">
+                  <h3>Buscador</h3>
+                <div class="search_box">
+                  <input type="search" class="busqueda" data-table="datosarray" placeholder="Buscar proyecto" >
+                  </div>
+              
+                
+            </div>
+              <table id="tabla" class="datosarray">
+                <thead>
+                  <tr>
+                    <th scope="col">Codigó</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Modifcar dato</th>
+                    
+                  </tr>
+                </thead>
+                <tbody id="tboby">
+
+                </tbody>
+               
+              </table>
+                     
+    </div>
+    <script>
+      (function(document) {
+        'use strict';
+  
+        var LightTableFilter = (function(Arr) {
+  
+          var _input;
+  
+          function _onInputEvent(e) {
+            _input = e.target;
+            var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
+            Arr.forEach.call(tables, function(table) {
+              Arr.forEach.call(table.tBodies, function(tbody) {
+                Arr.forEach.call(tbody.rows, _filter);
+              });
+            });
+          }
+  
+          function _filter(row) {
+            var text = row.textContent.toLowerCase(), val = _input.value.toLowerCase();
+            row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
+          }
+  
+          return {
+            init: function() {
+              var inputs = document.getElementsByClassName('busqueda');
+              Arr.forEach.call(inputs, function(input) {
+                input.oninput = _onInputEvent;
+              });
+            }
+          };
+        })(Array.prototype);
+  
+        document.addEventListener('readystatechange', function() {
+          if (document.readyState === 'complete') {
+            LightTableFilter.init();
+          }
+        });
+  
+      })(document);
+      </script>
+</body>
+</html>

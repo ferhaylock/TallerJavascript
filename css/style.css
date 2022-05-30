@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body{
+    background-image: url(../img/fondo1.jpg);
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+
+  table{
+    table-layout: auto;
+    margin-top: 40px;
+    margin-left: 40px;
+    margin-right: auto;
+    width: 80%;
+    border-collapse: collapse;
+    background-color: rgb(37, 82, 100);
+    color: rgb(192, 189, 189);
+    margin-bottom: 30px;
+  }
+ 
+  
+  #tabla th,thead{
+      background-color: rgb(110, 108, 105);
+  }
+  
+ .form{
+    
+      background-color: rgb(37, 82, 100);
+      width:800px;
+      margin-top: 70px;
+      margin-bottom: 30px
+      
+      
+  }
+  
+  
+  td, thead, th{
+    border: 2px solid black;
+    height: 70px;
+    width: 150px;  
+    padding: 8px;
+    
+  }
+  
+  h2{
+      margin-top: 20px;
+      text-align: center;
+      margin-bottom: 20px;
+      color: rgb(192, 192, 201);
+  }
+  h3{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: rgb(192, 192, 201);
+    font-size: 25px;
+}
+img{
+    height: 20px;
+    margin-left: 20px;
+}
+  
+  input{
+    margin-top: 10px;
+    font-size: 18px;
+  }
+
+  #buscador{
+      margin-left: 40px;
+      border-top: 10px solid black;
+
+  }
+  
+  button{
+  
+    background: linear-gradient(rgb(76, 81, 97),rgb(98, 105, 126)) ;
+    border: 0;
+    color: rgb(255, 255, 255);
+    opacity: 0.8;
+    cursor: pointer;
+    border-radius: 0px;
+    margin-bottom: 40px;
+    width: 50%;
+    height: 50px;
+    margin-left:150px;
+    margin-top: 20px;
+  
+  }
